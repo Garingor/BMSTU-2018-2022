@@ -1,4 +1,4 @@
-# Course Project
+# Course Project (6 semester)
 
 # Python + Django
 
