@@ -1,0 +1,18 @@
+FROM python:3
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+WORKDIR /djangoreactproject
+COPY requirements.txt /djangoreactproject/
+RUN pip3 install -r requirements.txt
+COPY . /djangoreactproject/
+EXPOSE 8000
+
+FROM node:14.17.5
+
+RUN mkdir /frontend
+WORKDIR /frontend
+COPY /frontend/package.json /frontend
+COPY /frontend /frontend
+RUN npm install
+EXPOSE 3000
+CMD ["npm", "start"]

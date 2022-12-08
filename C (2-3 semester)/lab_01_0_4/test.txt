@@ -1,0 +1,11 @@
+Test №1
+Input: 120
+Output: 4
+
+Test №2
+Input: 50
+Output: 1
+
+Test №2
+Input: 10
+Output: 0

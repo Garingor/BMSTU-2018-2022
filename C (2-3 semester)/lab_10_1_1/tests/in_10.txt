@@ -1,0 +1,42 @@
+Bruce
+female
+1977.12.8
+7 3 2 2 4 2 3 3 
+Duke
+male
+1982.11.26
+7 3 2 4 4 3 4 2 
+Warren
+female
+1979.5.12
+5 4 3 3 4 4 
+Palmer
+male
+1991.3.20
+4 4 2 4 4 
+Raymond
+female
+1991.8.31
+6 2 2 2 4 4 3 
+Lancaster
+male
+1985.12.28
+5 3 2 4 2 2 
+Mccarthy
+male
+1986.12.27
+2 3 2 
+Swanson
+female
+1988.11.18
+3 4 3 4 
+Summers
+male
+1995.9.2
+8 4 3 4 3 4 4 3 3 
+Christensen
+female
+1985.2.24
+9 2 3 2 20 4 4 4 3 4 
+nobody
+SEX

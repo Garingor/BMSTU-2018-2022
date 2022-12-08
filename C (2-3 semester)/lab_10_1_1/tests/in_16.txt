@@ -1,0 +1,42 @@
+Adkins
+male
+2009.11.14
+8 4 4 3 4 2 4 3 3 
+Campbell
+male
+1973.8.9
+1 3 
+Kennedy
+male
+2015.5.28
+7 2 3 4 4 3 4 2 
+Swanson
+male
+1975.9.7
+9 3 3 3 4 4 3 2 4 3 
+Wall
+male
+1994.6.28
+6 2 4 2 3 3 3 
+Joyner
+female
+2009.11.19
+6 2 2 2 3 3 2 
+Riddle
+female
+1984.1.18
+6 4 3 3 2 2 4 
+Cain
+female
+1982.11.4
+9 4 2 3 2 3 2 4 3 3 
+Buckley
+male
+1978.4.8
+8 3 3 3 3 3 2 3 3 
+Morris
+female
+1983.1.23
+5 3 4 3 3 3 
+nobody
+SEX

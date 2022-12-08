@@ -1,0 +1,42 @@
+Colon
+female
+1993.3.25
+2 3 2 
+Moss
+female
+10.4.1997
+5 4 3 2 4 4 
+Lyons
+male
+1973.6.30
+1 2 
+Lowe
+male
+1986.7.23
+9 2 3 4 3 2 2 3 3 2 
+Hoffman
+female
+1999.9.29
+3 4 4 4 
+Nixon
+male
+1988.8.22
+4 3 4 2 2 
+Cook
+female
+1980.4.16
+7 4 3 2 4 2 3 2 
+Walters
+male
+1997.5.28
+7 3 2 2 3 2 4 2 
+Mercado
+female
+2003.2.3
+4 4 3 2 3 
+Thornton
+male
+1998.3.16
+8 3 3 4 3 3 2 4 3 
+nobody
+SEX

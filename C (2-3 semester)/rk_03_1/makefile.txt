@@ -1,0 +1,9 @@
+CC = gcc
+CFLAG = -std=c99 -Wall -Werror
+ 
+app.exe: main.c input_output.c memory_darr.c util.c
+	$(CC) -o $@ $^
+	./app.exe
+
+%o: %c %h
+	$(CFLAG) -o $@ $<

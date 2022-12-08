@@ -1,0 +1,1 @@
+main.exe s text.bin (2 4 1 3)

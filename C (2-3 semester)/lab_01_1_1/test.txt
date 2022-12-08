@@ -1,0 +1,11 @@
+Test №1
+Input: 10 20 45
+Output: 74.99991
+
+Test №2
+Input: 20 40 30
+Output: 173.20490 
+
+Test №3
+Input: 20 30 25
+Output: 58.28840

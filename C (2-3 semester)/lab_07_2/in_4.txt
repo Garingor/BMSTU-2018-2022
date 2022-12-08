@@ -1,0 +1,9 @@
+app.exe ft file_in orange
+Appleorange
+Qwerty
+200
+10
+orangepineapple
+Qwerty
+100
+10

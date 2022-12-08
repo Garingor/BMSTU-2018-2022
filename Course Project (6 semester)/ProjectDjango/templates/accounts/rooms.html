@@ -1,0 +1,32 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+   <div class="row">
+        <div class="col-md-12">
+            <h5>Помещения:</h5>
+            <br>
+            <div class="card card-body">
+                <a class="btn btn-primary btn-sm btn-block" href="{% url 'create_room' %}">Добавить новое помещение</a>
+                <br>
+                <table class="table table-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Этаж</th>
+                        <th>Номер</th>
+                    </tr>
+                    {% for i in rooms %}
+                        <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.floor }}</td>
+                            <td>{{ i.number }}</td>
+                            <td><a class="btn btn-sm btn-info" href="{% url 'update_room' i.id %}">Обновить</a>
+                            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_room' i.id %}">Удалить</a>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

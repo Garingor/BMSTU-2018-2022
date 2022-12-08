@@ -1,0 +1,2 @@
+(Create file with name test.bin and 
+fill the file with random numbers)

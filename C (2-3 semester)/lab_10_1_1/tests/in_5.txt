@@ -1,0 +1,22 @@
+Santiago
+male
+2003.11.30
+3 3 4 4 
+Horn
+male
+2000.8.10
+3 4 2 3 
+Brewer
+male
+2006.1.14
+6 4 2 3 3 2 3 
+Tucker
+female
+2007.8.29
+3 2 2 2 
+Lynn
+female
+2012.2.11
+9 3 3 3 4 3 4 3 3 4 
+nobody
+GRADE

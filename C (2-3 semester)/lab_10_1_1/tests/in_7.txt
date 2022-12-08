@@ -1,0 +1,42 @@
+Wilkins
+female
+1972.12.1
+7 4 4 4 3 3 2 2 
+Mcgowan
+female
+2003.6.22
+1 4 
+Fuentes
+female
+1971.12.14
+8 2 4 4 3 4 2 3 4 
+Davenport
+malemale
+1987.2.25
+9 4 2 4 3 4 2 4 4 2 
+Howard
+male
+1982.11.9
+2 2 3 
+Garrison
+male
+1986.9.12
+5 2 2 2 2 4 
+Nguyen
+female
+1970.12.18
+3 4 3 2 
+Guzman
+male
+1976.5.28
+8 2 3 2 2 2 4 2 2 
+Sherman
+female
+1972.2.9
+2 2 4 
+Nicholson
+male
+1988.2.23
+2 4 3 
+nobody
+SURNAME

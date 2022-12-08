@@ -1,0 +1,22 @@
+{
+  "name": "lab_03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "task5.ex": "node task5/example/index.js",
+    "task5": "node task5/task/index.js",
+    "task6.ex1": "node task6/example1/index.js",
+    "task6.1": "node task6/task6.1/task6.1.js",
+    "task6.2": "node task6/task6.2/task6.2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "hbs": "^4.1.1"
+  }
+}

@@ -1,0 +1,48 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Юридические лица:</h5>
+            <br>
+            <div class="card card-body">
+                <a class="btn btn-primary btn-sm btn-block" href="{% url 'create_legalentity' %}">Добавить новое юр. лицо</a>
+                <br>
+                <table class="table table-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Отчество</th>
+                        <th>Адрес</th>
+                        <th>ИНН</th>
+                        <th>Пол</th>
+                        <th>Дата рождения</th>
+                        <th>Серия паспорта</th>
+                        <th>Номер паспорта</th>
+                        <th>Кол-во подчиненных</th>
+                    </tr>
+                    {% for i in legalentities %}
+                        <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.name }}</td>
+                            <td>{{ i.surname }}</td>
+                            <td>{{ i.patronymic }}</td>
+                            <td>{{ i.address }}</td>
+                            <td>{{ i.inn }}</td>
+                            <td>{{ i.sex }}</td>
+                            <td>{{ i.dob }}</td>
+                            <td>{{ i.series_passport }}</td>
+                            <td>{{ i.number_passport }}</td>
+                            <td>{{ i.employee_number }}</td>
+                            <td><a class="btn btn-sm btn-info" href="{% url 'update_legalentity' i.id %}">Обновить</a>
+                            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_legalentity' i.id %}">Удалить</a>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

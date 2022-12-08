@@ -1,0 +1,16 @@
+Carrillo
+male
+2012.4.10
+7 4 4 4 2 2 2 3 
+Ellison
+male
+2005.3.26
+9 3 4 2 2 2 4 2 2 3 
+Horne
+male
+2007.4.17
+3 2 3 3 
+Schmidt
+male
+2000.8.17
+6 4 2 2 2 4 3 

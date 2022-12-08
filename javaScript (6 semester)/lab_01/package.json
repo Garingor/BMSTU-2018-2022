@@ -1,0 +1,21 @@
+{
+  "name": "lab_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "task1.1": "node task1/task1.1.js",
+    "task1.2": "node task1/task1.2.js",
+    "task1.3": "node task1/task1.3.js",
+    "task2.1": "node task2/task2.1.js",
+    "task2.2": "node task2/task2.2.js",
+    "task2.3": "node task2/task2.3.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "readline-sync": "^1.4.10"
+  }
+}

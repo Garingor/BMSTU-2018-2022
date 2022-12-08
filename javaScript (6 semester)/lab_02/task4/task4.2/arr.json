@@ -1,0 +1,28 @@
+{
+    "1": "lab_02",
+    "2": "1.0.0",
+    "3": "",
+    "4": "index.js",
+    "5": {
+      "task3.1": "node task3/task3.1.js",
+      "task3.2": "node task3/task3.2.js",
+      "task3.3": "node task3/task3.3.js",
+      "task3.4": "node task3/task3.4.js",
+      "task3.5": "node task3/task3.5.js",
+      "task3.6": "node task3/task3.6.js",
+      "task3.7": "node task3/task3.7.js",
+      "task4.1": "node task4/task4.1/task4.1.js",
+      "task4.2": "node task4/task4.2/task4.2.js",
+      "task4.3": "node task4/task4.3/task4.3.js",
+      "task4.4": "node task4/task4.4/task4.4.js"
+    },
+    "6": [],
+    "7": "",
+    "8": "ISC",
+    "9": {
+      "express": "^4.17.1",
+      "fs": "0.0.1-security",
+      "readline-sync": "^1.4.10"
+    }
+  }
+  

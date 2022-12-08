@@ -1,0 +1,9 @@
+app.exe st file_in file_out
+Apple
+Qwerty
+100
+10
+Orange
+Qwerty
+100
+200

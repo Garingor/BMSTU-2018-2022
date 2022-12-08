@@ -1,0 +1,4 @@
+#ifndef LAB_10_TEST_TEST_H
+#define LAB_10_TEST_TEST_H
+
+#endif //LAB_10_TEST_TEST_H

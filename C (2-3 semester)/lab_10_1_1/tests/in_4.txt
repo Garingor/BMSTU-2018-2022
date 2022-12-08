@@ -1,0 +1,23 @@
+Schmidt
+male
+2000.8.17
+5 4 2 2 2 4 
+Carrillo
+male
+2012.4.10
+6 4 4 4 2 2 2 
+Ellison
+male
+2005.3.26
+8 3 4 2 2 2 4 2 2 
+Wright
+female
+1998.4.23
+3 4 2 2 
+Horne
+male
+2007.4.17
+2 2 3 
+nobody
+SURNAME
+

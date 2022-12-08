@@ -1,0 +1,42 @@
+Cabrera
+female
+2001.9.1
+9 3 4 4 2 4 4 4 3 4 
+Gould
+female
+1974.2.20
+0
+Witt
+female
+1978.2.3
+4 2 3 3 2 
+Keller
+male
+1987.4.30
+7 4 3 4 3 4 4 4 
+Cantrell
+female
+1987.12.18
+8 4 2 4 4 3 3 4 3 
+Goff
+female
+2003.12.22
+9 2 3 3 4 2 2 4 2 2 
+Rice
+female
+1971.4.11
+6 2 2 3 2 4 4 
+Kerr
+male
+1978.11.10
+5 2 4 3 2 2 
+Mays
+male
+1982.3.26
+8 4 3 4 4 4 2 2 4 
+Kramer
+male
+1972.7.28
+8 2 4 3 4 3 4 2 4 
+nobody
+GRADE

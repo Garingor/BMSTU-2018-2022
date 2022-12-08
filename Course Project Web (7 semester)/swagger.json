@@ -1,0 +1,898 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Inventory System"
+  },
+  "host": "127.0.0.1.:8000",
+  "basePath": "/api/v1",
+  "paths": {
+    "/rooms": {
+      "get": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Returns rooms",
+        "description": "Returns a list of rooms",
+        "operationId": "getRooms",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Add a new room",
+        "description": "",
+        "operationId": "placeRoom",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Rooms"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Rooms"
+            }
+          },
+          "400": {
+            "description": "Invalid Rooms"
+          }
+        }
+      }
+    },
+    "/rooms/{Roomid}": {
+      "get": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Returns room",
+        "description": "Returns room",
+        "operationId": "getRoom",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Roomid",
+            "in": "path",
+            "description": "ID of room to fetch",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Update an existing room",
+        "description": "",
+        "operationId": "updateRoom",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Roomid",
+            "in": "path",
+            "description": "Room id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Room object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Rooms"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Room not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Deletes a room",
+        "description": "",
+        "operationId": "deleteRoom",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Roomid",
+            "in": "path",
+            "description": "Room id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Room not found"
+          }
+        }
+      }
+    },
+    "/objects": {
+      "get": {
+        "tags": [
+          "objects"
+        ],
+        "summary": "Returns objects",
+        "description": "Returns a list of objects",
+        "operationId": "getObjects",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "objects"
+        ],
+        "summary": "Add a new object",
+        "description": "",
+        "operationId": "placeObject",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Objects"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Objects"
+            }
+          },
+          "400": {
+            "description": "Invalid Objects"
+          }
+        }
+      }
+    },
+    "/objects/{Objectid}": {
+      "get": {
+        "tags": [
+          "objects"
+        ],
+        "summary": "Returns object",
+        "description": "Returns object",
+        "operationId": "getObject",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Objectid",
+            "in": "path",
+            "description": "ID of object to fetch",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "objects"
+        ],
+        "summary": "Update an existing object",
+        "description": "",
+        "operationId": "updateObject",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Objectid",
+            "in": "path",
+            "description": "Object id to put",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Object object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Objects"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Object not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "objects"
+        ],
+        "summary": "Deletes a object",
+        "description": "",
+        "operationId": "deleteObject",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Objectid",
+            "in": "path",
+            "description": "Object id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Object not found"
+          }
+        }
+      }
+    },
+    "/legalentities": {
+      "get": {
+        "tags": [
+          "legalentities"
+        ],
+        "summary": "Returns legalentities",
+        "description": "Returns a list of legalentities",
+        "operationId": "getLegalentities",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "legalentities"
+        ],
+        "summary": "Add a new legalentity",
+        "description": "",
+        "operationId": "placeLegalentity",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Legalentities"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Legalentities"
+            }
+          },
+          "400": {
+            "description": "Invalid Legalentities"
+          }
+        }
+      }
+    },
+    "/legalentities/{LegalEntityid}": {
+      "get": {
+        "tags": [
+          "legalentities"
+        ],
+        "summary": "Returns legalentity",
+        "description": "Returns legalentity",
+        "operationId": "getLegalentity",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "LegalEntityid",
+            "in": "path",
+            "description": "ID of legalentity to fetch",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "legalentities"
+        ],
+        "summary": "Update an existing legalentity",
+        "description": "",
+        "operationId": "updateLegalentity",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "LegalEntityid",
+            "in": "path",
+            "description": "Legalentity id to put",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Legalentity object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Legalentities"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Legalentity not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "legalentities"
+        ],
+        "summary": "Deletes a legalentity",
+        "description": "",
+        "operationId": "deleteLegalentity",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "LegalEntityid",
+            "in": "path",
+            "description": "Legalentity id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Legalentity not found"
+          }
+        }
+      }
+    },
+    "/employees": {
+      "get": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Returns employees",
+        "description": "Returns a list of employees",
+        "operationId": "getEmployees",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Add a new employee",
+        "description": "",
+        "operationId": "employee",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Employees"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Employees"
+            }
+          },
+          "400": {
+            "description": "Invalid Employees"
+          }
+        }
+      }
+    },
+    "/employees/{Employeeid}": {
+      "get": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Returns employee",
+        "description": "Returns employee",
+        "operationId": "getEmployee",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Employeeid",
+            "in": "path",
+            "description": "Employee id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Update an existing employee",
+        "description": "",
+        "operationId": "updateEmployee",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Employeeid",
+            "in": "path",
+            "description": "Employee id to put",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Employee object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Employees"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Employee not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Deletes a employee",
+        "description": "",
+        "operationId": "deleteEmployee",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Employeeid",
+            "in": "path",
+            "description": "Employee id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Employee not found"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "inventorysystem_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+      "flow": "implicit",
+      "scopes": {
+        "write:pets": "modify pets in your account",
+        "read:pets": "read your pets"
+      }
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Employees": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "patronymic": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "inn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "series_passport": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "number_passport": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "position": {
+          "type": "string"
+        },
+        "legalentity": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "xml": {
+        "name": "Employee"
+      }
+    },
+    "Legalentities": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "patronymic": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "inn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "series_passport": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "number_passport": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "employee_number": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "xml": {
+        "name": "Legalentity"
+      }
+    },
+    "Objects": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "employee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "availability": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Object"
+      }
+    },
+    "Rooms": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "floor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "number": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "xml": {
+        "name": "Room"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

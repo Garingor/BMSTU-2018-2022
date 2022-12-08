@@ -1,0 +1,20 @@
+{
+  "name": "lab_04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "task7.1A": "node task7/task7.1/serverA.js",
+    "task7.1B": "node task7/task7.1/serverB.js",
+    "task7.1C": "node task7/task7.1/serverC.js",
+    "task7.2": "node task7/task7.2/task7.2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Запись в справочник</title>
+    <!--<link rel="stylesheet" href="/style.css">-->
+</head>
+<body>
+    <h2>Добавление типа автомобиля</h2>
+
+    <p>Название автомобиля</p>
+    <input id="field-insert-name-car" type="text" spellcheck="false" autocomplete="off">
+
+    <p>Стоимость автомобиля</p>
+    <input id="field-insert-cost-car" type="text" spellcheck="false" autocomplete="off">
+
+    <br>
+    <br>
+
+    <button onclick="insertCar()">Добавить</button>
+    <h4 id="label-input-status-insert-car"> </h4>
+
+    <br>
+    <br>
+
+    <h2>Получение информации об автомобиле</h2>
+
+    <p>Название автомобиля</p>
+    <input id="field-select-name-car" type="text" spellcheck="false" autocomplete="off">
+
+    <br>
+    <br>
+
+    <button onclick="selectCar()">Получить</button>
+    <h4 id="label-input-status-select-car"> </h4>
+
+    <br>
+    <br>
+
+    <h2>Добавление нового склада с автомобилями</h2>
+
+    <p>Название склада</p>
+    <input id="field-insert-name-storage" type="text" spellcheck="false" autocomplete="off">
+
+    <p>Названия автомобилей через пробел</p>
+    <input id="field-insert-arr-names-car" type="text" spellcheck="false" autocomplete="off">
+
+    <br>
+    <br>
+
+    <button onclick="insertStorage()">Добавить</button>
+    <h4 id="label-input-status-insert-storage"> </h4>
+
+    <br>
+    <br>
+
+    <h2>Получение информации о складе</h2>
+
+    <p>Название склада</p>
+    <input id="field-select-name-storage" type="text" spellcheck="false" autocomplete="off">
+
+    <br>
+    <br>
+
+    <button onclick="selectStorage()">Получить</button>
+    <h4 id="label-input-status-select-storage"> </h4>
+
+    <br>
+    <br>
+
+
+
+    <script>
+        "use strict";
+
+        // input fields
+        const fieldInsertNameCar = document.getElementById("field-insert-name-car");
+        const fieldInsertCostCar = document.getElementById("field-insert-cost-car");
+        const fieldSelectNameCar = document.getElementById("field-select-name-car");
+        const fieldInsertNameStorage = document.getElementById("field-insert-name-storage");
+        const fieldInsertArrNamesCar = document.getElementById("field-insert-arr-names-car");
+        const fieldSelectNameStorage = document.getElementById("field-select-name-storage");
+    
+        // labels input status
+        const labelInputStatusInsertCar = document.getElementById("label-input-status-insert-car");
+        const labelInputStatusSelectCar = document.getElementById("label-input-status-select-car");
+        const labelInputStatusInsertStorage = document.getElementById("label-input-status-insert-storage");
+        const labelInputStatusSelectStorage = document.getElementById("label-input-status-select-storage");
+
+        // ajax get
+        function ajaxGet(urlString, callback) {
+            let r = new XMLHttpRequest();
+            r.open("GET", urlString, true);
+            r.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+            r.send(null);
+            r.onload = function() {callback(r.response);};
+        };
+
+        function insertCar() 
+        {
+            let nameCar = fieldInsertNameCar.value.trim().split(" ");
+            let costCar = fieldInsertCostCar.value.trim().split(" ");
+    
+            if (nameCar.length > 1 || costCar.length > 1 || nameCar[0] === "" || costCar[0] === "")
+                labelInputStatusInsertCar.innerHTML = "Некорректный ввод";
+            else
+            {
+                labelInputStatusInsertCar.innerHTML = " ";
+                nameCar = nameCar[0];
+                costCar = costCar[0];
+                const url = `/car/insert/?nameCar=${nameCar}&costCar=${costCar}`
+                ajaxGet(url, function(stringAnswer) {
+                    const objectAnswer = JSON.parse(stringAnswer);
+                    if (objectAnswer.result)
+                        alert("Новый тип автомобиля успешно добавлен");
+                    else
+                        alert("Этот тип автомобиля уже добавлен");
+                });
+            }
+        }
+
+        function selectCar()
+        {
+            let nameCar = fieldSelectNameCar.value.trim().split(" ");
+            if (nameCar.length > 1 || nameCar[0] === "")
+                labelInputStatusSelectCar.innerHTML = "Некорректный ввод";
+            else
+            {
+                labelInputStatusSelectCar.innerHTML = "";
+                nameCar = nameCar[0];
+                const url = `/car/select/?nameCar=${nameCar}`
+                ajaxGet(url, function(stringAnswer) {
+                    const objectAnswer = JSON.parse(stringAnswer);
+                    if (objectAnswer.result)
+                        alert(`Название автомобиля: ${nameCar}\nСтоимость автомобиля: ${objectAnswer.costCar}`);
+                    else
+                        alert("Автомобиля с таким названием нет");
+                });
+            }
+        }
+
+        function insertStorage()
+        {
+            let nameStorage = fieldInsertNameStorage.value.trim().split(" ");
+            let arrNamesCar = fieldInsertArrNamesCar.value.trim().split(" ");
+    
+            if (nameStorage.length > 1 || nameStorage[0] === "")
+                labelInputStatusInsertStorage.innerHTML = "Некорректный ввод";
+            else
+            {
+                labelInputStatusInsertStorage.innerHTML = " ";
+                nameStorage = nameStorage[0];
+                const url = `/storage/insert/?nameStorage=${nameStorage}&arrNamesCar=${arrNamesCar.join(",")}`
+                ajaxGet(url, function(stringAnswer) {
+                    const objectAnswer = JSON.parse(stringAnswer);
+                    if (objectAnswer.result)
+                        alert("Новый склад успешно добавлен");
+                    else if (objectAnswer.error === "storage")
+                        alert("Этот склад уже добавлен");
+                    else if (objectAnswer.error === "car")
+                        alert("Таких автомобилей нет");
+                });
+            }
+        }
+
+        function selectStorage()
+        {
+
+        }
+
+    </script>
+</body>
+</html>

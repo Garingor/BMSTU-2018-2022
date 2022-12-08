@@ -1,0 +1,11 @@
+Test №1
+Input: 8 4
+Output: 2 0
+
+Test №2
+Input: 8 3
+Output: 2 2
+
+Test №3
+Input: 8 5
+Output: 1 3

@@ -1,0 +1,51 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Сотрудники:</h5>
+            <br>
+            <div class="card card-body">
+                <a class="btn btn-primary btn-sm btn-block" href="{% url 'create_employee' %}">Добавить нового сотрудника</a>
+                <br>
+                <table class="table table-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Отчество</th>
+                        <th>Адрес</th>
+                        <th>ИНН</th>
+                        <th>Пол</th>
+                        <th>Дата рождения</th>
+                        <th>Серия паспорта</th>
+                        <th>Номер паспорта</th>
+                        <th>Должность</th>
+                        <th>юр. лицо</th>
+                    </tr>
+                    {% for i in employees %}
+                        <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.name }}</td>
+                            <td>{{ i.surname }}</td>
+                            <td>{{ i.patronymic }}</td>
+                            <td>{{ i.address }}</td>
+                            <td>{{ i.inn }}</td>
+                            <td>{{ i.sex }}</td>
+                            <td>{{ i.dob }}</td>
+                            <td>{{ i.series_passport }}</td>
+                            <td>{{ i.number_passport }}</td>
+                            <td>{{ i.position }}</td>
+                            <td>{{ i.legalentity }}</td>
+                            <td><a class="btn btn-sm btn-info" href="{% url 'update_employee' i.id %}">Обновить</a>
+                            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_employee' i.id %}">Удалить</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

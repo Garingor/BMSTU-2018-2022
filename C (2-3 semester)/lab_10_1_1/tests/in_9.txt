@@ -1,0 +1,42 @@
+Workman
+female
+1978.10.18
+4 2 2 2 4 
+Ward
+male
+1985.3.4
+7 2 2 4 3 2 3 3 
+Banks
+male
+1972.10.21
+1 4 
+Joyce
+female
+1973.7.23
+1 2 
+Nieves
+male
+1988.9.4
+1 4 
+Cherry
+female
+2002.12.9
+4 3 2 4 4 
+Reese
+female
+2000.10.2
+9 3 4 3 2 3 4 3 3 3 
+Manning
+male
+2001.7.8
+8 3 3 2 3 3 3 3 4 
+Fox
+male
+1997.11.18
+6 3 2 4 3 4 4 
+Hess
+male
+2010.1.2
+5 4 3 3 4 2 
+nobody
+SeX

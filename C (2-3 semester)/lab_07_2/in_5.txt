@@ -1,0 +1,15 @@
+app.exe at file_in_out
+Apple
+Qwerty
+120
+10
+Orange
+Qwerty
+100
+5
+
+Stdin:
+Pineapple
+Qwerty
+1000
+200

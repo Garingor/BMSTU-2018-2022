@@ -1,0 +1,7 @@
+FROM python:3
+WORKDIR /demoflasksqlite3
+COPY requirements.txt /demoflasksqlite3/
+RUN pip3 install -r requirements.txt
+COPY . /demoflasksqlite3/
+EXPOSE 80
+CMD ["python3", "app.py"]

@@ -1,0 +1,44 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Оборудование:</h5>
+            <br>
+            <div class="card card-body">
+                <a class="btn btn-primary btn-sm btn-block" href="{% url 'create_object' %}">Добавить новое оборудование</a>
+                <br>
+                <table class="table table-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Описание</th>
+                        <th>Состояние</th>
+                        <th>Дата покупки</th>
+                        <th>Сотрудник</th>
+                        <th>Помещение</th>
+                        <th>Доступность</th>
+                    </tr>
+                    {% for i in objects %}
+                        <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.name }}</td>
+                            <td>{{ i.description }}</td>
+                            <td>{{ i.condition }}</td>
+                            <td>{{ i.purchase_date }}</td>
+                            <td>{{ i.employee }}</td>
+                            <td>{{ i.room }}</td>
+                            <td>{{ i.availability }}</td>
+                            <td><a class="btn btn-sm btn-light"
+                                   href="https://chart.googleapis.com/chart?choe=UTF-8&chld=H&cht=qr&chs=400x400&chl=http://127.0.0.1:8000/get_qr_object/{{ i.id }}">QR</a>
+                            <td><a class="btn btn-sm btn-info" href="{% url 'update_object' i.id %}">Обновить</a>
+                            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_object' i.id %}">Удалить</a>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

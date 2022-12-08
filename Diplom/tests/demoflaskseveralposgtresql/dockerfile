@@ -1,0 +1,7 @@
+FROM python:3
+WORKDIR /demoflaskseveralposgtresql
+COPY requirements.txt /demoflaskseveralposgtresql/
+RUN pip3 install -r requirements.txt
+COPY . /demoflaskseveralposgtresql/
+EXPOSE 80
+CMD ["python3", "app.py"]

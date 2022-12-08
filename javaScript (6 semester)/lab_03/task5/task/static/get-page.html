@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Чтение справочника</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1 class="first-header-class">Получение записи из справочника по адресу электронной почты</h1>
+
+    <p>Почта</p>
+    <input id="field-email" oninput="inputAction()" type="text" spellcheck="false" autocomplete="off">
+
+    <br>
+    <br>
+
+    <button onclick="getAction()" class="btn-class">Получить запись из справочника</button>
+    <div id="label-inputStatus"></div>
+
+    <br>
+    <br>
+
+    <div id="label-result"></div>
+
+    <script>
+        "use strict";
+
+        // input fields
+        const fieldEmail = document.getElementById("field-email");
+
+        // label
+        const labelInputStatus = document.getElementById("label-inputStatus");
+        const labelResult = document.getElementById("label-result");
+        
+        function inputAction()
+        {
+            labelResult.innerHTML = "";
+            labelInputStatus.innerHTML = "";
+        }
+
+        function ajaxGet(urlString, callback) 
+        {
+            let r = new XMLHttpRequest();
+            r.open("GET", urlString, true);
+            r.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+            r.send(null);
+            r.onload = function() {
+                callback(r.response);
+            };
+        };
+
+        function getAction() 
+        {
+            let email = fieldEmail.value.trim().split(" ");
+    
+            if (email.length > 1 || email[0] === "")
+                labelInputStatus.innerHTML = "Некорректный ввод";
+            else
+            {
+                labelInputStatus.innerHTML = "";
+                const url = `/directory/get?email=${email}`;
+                ajaxGet(url, function(stringAnswer) {
+                    console.log(stringAnswer);
+                    const objectAnswer = JSON.parse(stringAnswer);
+                    if (objectAnswer["status"])
+                    {
+                        labelResult.innerHTML = `Фамилия: ${objectAnswer.surname}<br>
+Номер телефона: ${objectAnswer.phoneNum}`;
+                    }
+                    else
+                    {
+                        labelResult.innerHTML = "Человека с такой почтой в справочнике нет";
+                    }
+                });
+            }
+        };
+    
+        function ajaxPost(urlString, bodyString, callback) 
+        {
+            let r = new XMLHttpRequest();
+            r.open("POST", urlString, true);
+            r.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            r.send(bodyString);
+            r.onload = function() 
+            {
+                callback(r.response);
+            }
+        }
+
+        function appendAction() 
+        {
+            let email = fieldEmail.value.trim().split(" ");
+            let surname = fieldSurname.value.trim().split(" ");
+            let phoneNum = fieldPhoneNum.value.trim().split(" ");
+    
+            if (email.length > 1 || surname.length > 1 || phoneNum.length > 1 ||
+                email[0] === "" || surname[0] === "" || phoneNum[0] === "")
+                labelInputStatus.innerHTML = "Некорректный ввод";
+            else
+            {
+                labelInputStatus.innerHTML = "";
+                email = email[0];
+                surname = surname[0];
+                phoneNum = phoneNum[0].match(/\d/g).join("");
+                ajaxPost("/directory/append", JSON.stringify({email, surname, phoneNum}), function(answerString) {
+                    console.log(answerString);
+                    const answerObject = JSON.parse(answerString);
+                    const result = answerObject.result;
+                    alert(result);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
