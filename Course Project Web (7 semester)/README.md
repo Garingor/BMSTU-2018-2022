@@ -1,4 +1,4 @@
-# BMSTU_WEB_7_sem_2021
+# WEB (7 semester)
 
 # Python + Django + React
 
